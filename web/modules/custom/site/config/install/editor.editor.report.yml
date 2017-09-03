@@ -1,0 +1,71 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.report
+  module:
+    - ckeditor
+format: report
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - movie
+            - ImceImage
+            - video_embed
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - Source
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: ''
+    autoembed:
+      status: ''
+    wordcount:
+      enable: 1
+      show_paragraphs: 0
+      show_word_count: 0
+      show_char_count: 1
+      count_spaces: 1
+      count_html: 0
+      max_words: '-1'
+      max_chars: '255'
+    video_embed:
+      defaults:
+        children:
+          autoplay: false
+          responsive: false
+          width: '854'
+          height: '480'
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.report_user
+id: node.report_user
+target_entity_type_id: node
+target_bundle: report_user
+default_langcode: authors_default
+language_alterable: false

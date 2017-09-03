@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.report_user.body
+    - field.field.node.report_user.field_date
+    - field.field.node.report_user.field_reporter
+    - node.type.report_user
+  module:
+    - datetime
+    - text
+    - user
+id: node.report_user.default
+targetEntityType: node
+bundle: report_user
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_date:
+    weight: 102
+    label: hidden
+    settings:
+      timezone_override: Africa/Libreville
+      date_format: m/d/Y
+    third_party_settings: {  }
+    type: datetime_custom
+    region: content
+  field_reporter:
+    weight: 103
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_entity_id
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

@@ -104,8 +104,6 @@ function report_test_form_alter(&$form, FormStateInterface $form_state, $form_id
         $date = \Drupal::service('date.formatter')
           ->format($date, 'custom', '', drupal_get_user_timezone());
         $form_state->setValue('date', $date);
-
-        kint($form);
       }
     }
 

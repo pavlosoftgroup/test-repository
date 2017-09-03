@@ -1,0 +1,14 @@
+name: 'Report content type'
+description: 'Provides Report content type and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - datetime
+  - field
+  - language
+  - menu_ui
+  - node
+  - path
+  - report_test
+  - text
+  - user

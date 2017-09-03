@@ -1,0 +1,11 @@
+name: User
+description: 'Provide User related configuration.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - file
+  - image
+  - language
+  - user
+version: 8.x-1.0

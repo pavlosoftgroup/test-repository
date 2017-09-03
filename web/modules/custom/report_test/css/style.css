@@ -1,0 +1,29 @@
+/* CSS STYL */
+
+#edit-field-reporter-wrapper {
+  padding:2px;
+  width: 300px;
+  height: 100px;
+  margin-bottom: 30px;
+  position: relative;
+
+}
+#edit-field-reporter-0-reporter_child ul{
+  padding:0;
+  margin: 0;
+}
+#edit-field-reporter-0-reporter_child li, .ddTitle.borderRadiusTp{
+  background: #fff;
+  border: #000 1px solid;
+  list-style: none;
+  display: block;
+  padding:2px;
+  width: 300px;
+  height: 100px;
+}
+.fnone{
+  display: inline;
+}
+.ddlabel{
+  display: inline-block;
+}

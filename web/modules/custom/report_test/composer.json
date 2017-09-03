@@ -1,0 +1,14 @@
+{
+  "name": "drupal/report_test",
+  "type": "drupal-module",
+  "description": "Test Report Module",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/report_test",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/report_test",
+    "source": "http://cgit.drupalcode.org/report_test"
+  },
+  "require": { }
+}

@@ -1,0 +1,7 @@
+report_test:
+  path: '/add/report_test'
+  defaults:
+    _controller: '\Drupal\report_test\Controller\ReportTestController::content'
+    _title: 'Report'
+  requirements:
+    _permission: 'access content'

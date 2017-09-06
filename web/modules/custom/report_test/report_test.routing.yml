@@ -1,7 +1,15 @@
-report_test:
+report_test.page:
   path: '/add/report_test'
   defaults:
     _controller: '\Drupal\report_test\Controller\ReportTestController::content'
     _title: 'Report'
   requirements:
     _permission: 'access content'
+report_test.modal:
+  path: '/report_test/modal'
+  defaults:
+    _title: Modal
+    _content: '\Drupal\report_test\Controller\ReportTestController::reportAjaxCallback'
+  requirements:
+    _permission: 'access content'
+    js: 'nojs|ajax'

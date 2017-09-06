@@ -7,6 +7,9 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\OpenModalDialogCommand;
 
 
 /**
@@ -43,7 +46,7 @@ function report_test_theme() {
 function report_test_element_info_alter(array &$types) {
 
   // Set defaults for datetime fields.
-  $types['datetime']['#process'][] = '_set_datetime_defaults';
+  //  $types['datetime']['#process'][] = '_set_datetime_defaults';
 }
 
 /**
@@ -64,7 +67,10 @@ function _set_datetime_defaults($element) {
 function report_test_preprocess_node(&$variables) {
   $variables['date'] = \Drupal::service('date.formatter')
     ->format($variables['node']->getCreatedTime(), 'report_date');
+
+
 }
+
 
 /**
  * Implements hook_field_widget_form_alter().
@@ -72,11 +78,39 @@ function report_test_preprocess_node(&$variables) {
 function report_test_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
 
   $field_definition = $context['items']->getFieldDefinition();
-  if ($field_definition->getType() == 'datetime') {
 
-    $element['value']['#date_date_format'] = 'm/d/Y';
-    $element['value']['#default_value'] = Date('m/d/Y', time());
-    //    $element['value']['#value'] = Date('m/d/Y', time());
+  //  kint($field_definition);
+
+  switch ($field_definition->getType()) {
+    case 'datetime':
+
+      $element['value']['#type'] = 'textfield';
+      $element['value']['#size'] = 10;
+      $element['value']['#attributes'] = [
+        'class' => [
+          'datetime',
+          'datepicker',
+          'date',
+        ],
+        'placeholder' => 'mm/dd/YYYY',
+      ];
+      $element['value']['#date_date_format'] = 'm/d/Y';
+      $element['value']['#default_value'] = NULL;
+      //      $element['value']['#value'] = DateTime(Date('m/d/Y', time();
+      break;
+    case 'submit':
+
+//      $element['#submit'] = [['::ajaxFormSubmitHandler'];
+
+
+      //      kint($element);
+
+
+      break;
+    case '':
+      break;
+
+
   }
 }
 
@@ -87,33 +121,92 @@ function report_test_form_alter(&$form, FormStateInterface $form_state, $form_id
 
   if ($form_id == 'node_report_user_form' || $form_id == 'node_report_user_edit_form') {
     $form['#attached']['library'][] = 'core/drupal.ajax';
+    $form['#attached']['library'][] = 'modal/modal';
+
 
     foreach (array_keys($form['actions']) as $action) {
       if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
-        $date = time  ($form_state->getValue('date'));
-        $form['actions']['submit']['#ajax'] = [
-          'callback' => '\Drupal\report_test\Controller\ReportTestController::report_form_ajax_form_submit',
-          'event' => 'click',
-          'progress' => [
-            'type' => 'throbber',
-            'message' => '',
-          ],
-        ];
-        array_unshift($form['#submit'], '\Drupal\report_test\Controller\ReportTestController::report_form_ajax_form_submit');
+        //
+        //        }
+        switch ($action) {
+          case 'submit':
+            $title = $form_state->getValues();
 
-        $date = \Drupal::service('date.formatter')
-          ->format($date, 'custom', '', drupal_get_user_timezone());
-        $form_state->setValue('date', $date);
+
+
+            kint($title);
+
+            $form['actions']['submit'] += [
+              '#value' => 'Save',
+              '#type' => 'button',
+
+              '#attributes' => [
+                'class' => [
+                  'btn',
+                  'btn-md',
+                  'btn-primary',
+//                  'use-ajax-submit',
+                ],
+              ],
+              '#ajax' => [
+                'callback' => 'reportAjaxCallback',
+                'event' => 'click',
+                'progress' => [
+                  'type' => 'throbber',
+                  'message' => '',
+                ],
+              ],
+            ];
+
+//            $form_state->setValue('title', $form['title']['']);
+
+            //        $date = \Drupal::service('date.formatter')
+            //          ->format($date, 'custom', '', drupal_get_user_timezone());
+            $form_state->setValue('field_date', DrupalDateTime::createFromTimestamp(time()));
+//            $form_state->setRebuild();
+
+            //        kint($form);
+//            $form_state->setRebuild();
+            kint($form);
+            kint($form_state);
+            break;
+          //        $form['submitted']['lebenslauf']['#process'] = array('report_form_ajax_form_submit');
+          //        array_unshift($form['#submit'], '\Drupal\report_test\Controller\ReportTestController::report_form_ajax_form_submit');
+        }
+
       }
     }
 
-//    $form_state_complete_form=$form_state->getCompleteForm();
-//    if(empty($form_state_complete_version)){
-//      $form ['source']['migration_ids']['#options'] = $form_state->getDestinationIds("d6");
-//    }
-//    else  {
-//      $form ['source']['migration_ids']['#options'] = $this->getDestinationIds($form_state_complete_version);
-//    }
+    //    $form_state_complete_form=$form_state->getCompleteForm();
+    //    if(empty($form_state_complete_version)){
+    //      $form ['source']['migration_ids']['#options'] = $form_state->getDestinationIds("d6");
+    //    }
+    //    else  {
+    //      $form ['source']['migration_ids']['#options'] = $this->getDestinationIds($form_state_complete_version);
+    //    }
   }
 }
+
+/**
+ * Realisation ajax callback for report creat/edit form.
+ */
+function reportAjaxCallback(array $form, FormStateInterface $form_state) {
+
+  $date = $form_state->getValue('field_date');
+  $title = $form_state->getValue('title');
+  $description = $form_state->getValue('body');
+      kint($date);
+  $content['#attached']['library'][] = 'core/drupal.dialog.ajax';
+  $response = new AjaxResponse();
+  $response->addCommand(new OpenModalDialogCommand($title, 'ASDASDADAD', [
+    'dialogClass' => 'popup-dialog-class',
+    'width' => '400',
+    'height' => '400',
+  ]));
+  kint($response);
+  //    print_r($response);exit;
+  return $response;
+
+}
+
 

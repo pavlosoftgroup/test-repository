@@ -7,8 +7,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\OpenModalDialogCommand;
+
+
 
 /**
  * Class ReporttTestController.
@@ -44,21 +44,9 @@ class ReportTestController extends ControllerBase {
     ];
   }
 
-  /**
-   * Realisation ajax callback for report creat/edit form.
-   */
-  function report_form_ajax_form_submit(array $form, FormStateInterface $form_state) {
-    kint($form);
 
-    $date = $form_state->getValue('date');
-    $description = $form_state->getValue('description');
-    $response = new AjaxResponse();
-    $response->addCommand(new OpenModalDialogCommand($date, $description['value'], [
-      'width' => '400',
-      'height' => '400',
-    ]));
-    return $response;
-  }
+
+
 
   /**
    * Content.
@@ -74,6 +62,7 @@ class ReportTestController extends ControllerBase {
 
     return [
       '#type' => 'markup',
+      '#attributes' => [],
       '#markup' => render($node_create_form),
     ];
   }

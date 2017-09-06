@@ -1,0 +1,11 @@
+id: rules_report_action
+label: 'Report action'
+status: true
+langcode: en
+type: node
+plugin: rules_report_action
+dependencies:
+  module:
+    - node
+    - report_test
+

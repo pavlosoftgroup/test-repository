@@ -8,6 +8,8 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\OpenModalDialogCommand;
 
 
 /**
@@ -60,20 +62,34 @@ function _set_datetime_defaults($element) {
 }
 
 /**
- * Implements hook_preprocess_node().
+ * Implements report_test_preprocess_page().
  */
-function report_test_preprocess_node(&$variables) {
-  $node = $variables['node'];
-  kint($variables);
-  if ($node->bundle() == 'report_user') {
+function report_test_preprocess_page(&$variables) {
 
-    $variables['elements']['#attached']['library'][] = 'core/drupal.ajax';
-    $variables['elements']['#attached']['library'][] = 'modal/modal';
-    $variables['elements']['#attached']['library'][] = 'core/drupal.dialog.ajax';
+
+  if (isset($variables['node'])) {
+    $node = $variables['node'];
+    if ($node->bundle() == 'report_user') {
+      $variables['page']['#attached']['library'][] = 'core/drupal.ajax';
+      $variables['page']['#attached']['library'][] = 'modal/modal';
+      $variables['page']['#attached']['library'][] = 'core/drupal.dialog.ajax';
+      $variables['page']['#attached']['js'][] = drupal_get_path('module', 'report_test') . '/js/ajax.report.js';
 
 
     kint($variables);
+
+    }
   }
+  //  $node = $variables['node'];
+
+
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function report_test_preprocess_node(&$variables) {
+
 
   $variables['date'] = \Drupal::service('date.formatter')
     ->format($variables['node']->getCreatedTime(), 'report_date');
@@ -119,8 +135,8 @@ function report_test_field_widget_form_alter(&$element, FormStateInterface $form
 function report_test_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   if ($form_id == 'node_report_user_form' || $form_id == 'node_report_user_edit_form') {
-//    $form['#attached']['library'][] = 'core/drupal.ajax';
-//    $form['#attached']['library'][] = 'modal/modal';
+    //    $form['#attached']['library'][] = 'core/drupal.ajax';
+    //    $form['#attached']['library'][] = 'modal/modal';
 
 
     foreach (array_keys($form['actions']) as $action) {
@@ -129,33 +145,37 @@ function report_test_form_alter(&$form, FormStateInterface $form_state, $form_id
         //        }
         switch ($action) {
           case 'submit':
-            //
-            //            $form['actions']['submit'] = [
-            //              '#value' => t('Save'),
-            //              '#type' => 'button',
-            //              '#attributes' => [
-            //                'class' => [
-            //                  'btn',
-            //                  'btn-md',
-            //                  'btn-primary',
-            //                ],
-            //              ],
-            //              '#ajax' => [
-            //                'callback' => 'reportAjaxCallback',
-            //                'event' => 'click',
-            //                'progress' => [
-            //                  'type' => 'throbber',
-            //                  'message' => '',
-            //                ],
-            //              ],
-            //            ];
+            $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
+
+            $form['actions']['submit'] += [
+              '#value' => t('Save'),
+              '#type' => 'button',
+              '#attributes' => [
+                'class' => [
+                  'btn',
+                  'btn-md',
+                  'btn-primary',
+//                  'use-ajax-submit',
+//                                    'use-ajax'
+                ],
+//                "data-accepts"=>"application/vnd.drupal-modal",
+              ],
+              '#ajax' => [
+                'callback' => 'reportPopupAjaxCallback',
+                'event' => 'click',
+                'progress' => [
+                  'type' => 'throbber',
+                  'message' => '',
+                ],
+              ],
+            ];
 
             //            $form_state->setValue('title', $form['title']['']);
 
             //        $date = \Drupal::service('date.formatter')
             //          ->format($date, 'custom', '', drupal_get_user_timezone());
             $form_state->setValue('field_date', DrupalDateTime::createFromTimestamp(time()));
-            //            $form_state->setRebuild();
+//            $form_state->setRebuild();
 
             //            kint($form);
             //            kint($form_state);
@@ -175,6 +195,24 @@ function report_test_form_alter(&$form, FormStateInterface $form_state, $form_id
     //      $form ['source']['migration_ids']['#options'] = $this->getDestinationIds($form_state_complete_version);
     //    }
   }
+}
+ function reportPopupAjaxCallback() {
+
+  $title = 'Popup title';
+  //  $description = $form_state->getValue('body');
+  //      kint($date);
+  $response = new AjaxResponse();
+
+  $response->addCommand(new OpenModalDialogCommand($title, 'ASDASDADAD', [
+    'dialogClass' => 'popup-dialog-class',
+    'width' => '400',
+    'height' => '400',
+  ]));
+  $response->send();
+  exit;
+  //    return $response;
+
+
 }
 
 

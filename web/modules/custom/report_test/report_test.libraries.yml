@@ -8,8 +8,13 @@ global-styling:
     js/report-form.js: {}
   dependencies:
     - core/jquery
-    - core/ajax
     - core/drupal.dialog.ajax
     - core/modernizr
     - core/jquery.once
     - core/jquery.ui.datepicker
+ajax-scripts:
+  version: 1.x
+  js:
+    js/ajax.report.js: {}
+  dependencies:
+    - core/ajax

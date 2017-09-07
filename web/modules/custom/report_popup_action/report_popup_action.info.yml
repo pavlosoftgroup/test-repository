@@ -1,0 +1,5 @@
+name: report_popup_action
+type: module
+description: Action Popup Report Module
+core: 8.x
+package: Custom

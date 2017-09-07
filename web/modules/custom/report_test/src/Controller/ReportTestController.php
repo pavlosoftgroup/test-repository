@@ -57,14 +57,14 @@ class ReportTestController extends ControllerBase {
     //      kint($date);
     $response = new AjaxResponse();
 
-    $response->addCommand(new OpenModalDialogCommand($title, 'ASDASDADAD', [
+    $response->addCommand(new OpenModalDialogCommand($title, 'wwwwwwwwwwwwwwww', [
       'dialogClass' => 'popup-dialog-class',
       'width' => '400',
       'height' => '400',
     ]));
-        $response->send();
-        exit;
-//    return $response;
+//        $response->send();
+//        exit;
+    return $response;
 
 
   }

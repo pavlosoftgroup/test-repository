@@ -72,7 +72,6 @@ function report_test_preprocess_page(&$variables) {
     if ($node->bundle() == 'report_user') {
       $variables['page']['#attached']['library'][] = 'core/drupal.ajax';
       $variables['page']['#attached']['library'][] = 'modal/modal';
-      $variables['page']['#attached']['library'][] = 'core/drupal.dialog.ajax';
       $variables['page']['#attached']['js'][] = drupal_get_path('module', 'report_test') . '/js/ajax.report.js';
 
 
@@ -135,8 +134,9 @@ function report_test_field_widget_form_alter(&$element, FormStateInterface $form
 function report_test_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   if ($form_id == 'node_report_user_form' || $form_id == 'node_report_user_edit_form') {
-    //    $form['#attached']['library'][] = 'core/drupal.ajax';
-    //    $form['#attached']['library'][] = 'modal/modal';
+        $form['#attached']['library'][] = 'core/drupal.ajax';
+        $form['#attached']['library'][] = 'modal/modal';
+
 
 
     foreach (array_keys($form['actions']) as $action) {
@@ -147,9 +147,10 @@ function report_test_form_alter(&$form, FormStateInterface $form_state, $form_id
           case 'submit':
             $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
 
+
             $form['actions']['submit'] += [
               '#value' => t('Save'),
-              '#type' => 'button',
+              '#type' => 'submit',
               '#attributes' => [
                 'class' => [
                   'btn',
@@ -158,10 +159,12 @@ function report_test_form_alter(&$form, FormStateInterface $form_state, $form_id
 //                  'use-ajax-submit',
 //                                    'use-ajax'
                 ],
+//                'onclick' => 'return (false);',
 //                "data-accepts"=>"application/vnd.drupal-modal",
               ],
               '#ajax' => [
-                'callback' => 'reportPopupAjaxCallback',
+                'callback' => \Drupal::service('report_popup_action.default')->reportPopupAjaxCallback(),
+//                'callback' => ['reportPopupAjaxCallback', $this],
                 'event' => 'click',
                 'progress' => [
                   'type' => 'throbber',
@@ -177,7 +180,7 @@ function report_test_form_alter(&$form, FormStateInterface $form_state, $form_id
             $form_state->setValue('field_date', DrupalDateTime::createFromTimestamp(time()));
 //            $form_state->setRebuild();
 
-            //            kint($form);
+                        kint(\Drupal::service('report_popup_action.default')->reportPopupAjaxCallback());
             //            kint($form_state);
             break;
           //        $form['submitted']['lebenslauf']['#process'] = array('report_form_ajax_form_submit');
@@ -208,9 +211,9 @@ function report_test_form_alter(&$form, FormStateInterface $form_state, $form_id
     'width' => '400',
     'height' => '400',
   ]));
-  $response->send();
-  exit;
-  //    return $response;
+//  $response->send();
+//  exit;
+      return $response;
 
 
 }

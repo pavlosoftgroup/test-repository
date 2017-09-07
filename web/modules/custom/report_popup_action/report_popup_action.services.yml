@@ -1,0 +1,5 @@
+services:
+  report_popup_action.default:
+    class: Drupal\report_popup_action\ReportAjaxPopupService
+    arguments: []
+

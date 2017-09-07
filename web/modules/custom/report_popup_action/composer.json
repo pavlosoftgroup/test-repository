@@ -1,0 +1,14 @@
+{
+  "name": "drupal/report_popup_action",
+  "type": "drupal-module",
+  "description": "Action Popup Report Module",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/report_popup_action",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/report_popup_action",
+    "source": "http://cgit.drupalcode.org/report_popup_action"
+  },
+  "require": { }
+}

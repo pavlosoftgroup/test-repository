@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains report_popup_action.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function report_popup_action_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the report_popup_action module.
+    case 'help.page.report_popup_action':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Action Popup Report Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function report_popup_action_theme() {
+  return [
+    'report_popup_action' => [
+      'render element' => 'children',
+    ],
+  ];
+}

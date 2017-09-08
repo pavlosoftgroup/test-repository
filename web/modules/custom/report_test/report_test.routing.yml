@@ -5,11 +5,4 @@ report_test.page:
     _title: 'Report'
   requirements:
     _permission: 'access content'
-report_test.modal:
-  path: '/report_test/modal/{js}'
-  defaults:
-    _title: Modal
-    _controller: '\Drupal\report_test\Controller\ReportTestController::reportAjaxCallback'
-  requirements:
-    _permission: 'access content'
-    js: 'nojs|ajax'
+

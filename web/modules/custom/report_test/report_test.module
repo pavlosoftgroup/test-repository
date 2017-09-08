@@ -8,8 +8,6 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\OpenModalDialogCommand;
 
 
 /**
@@ -39,16 +37,6 @@ function report_test_theme() {
   ];
 }
 
-
-/**
- * Implements hook_element_info_alter().
- */
-function report_test_element_info_alter(array &$types) {
-
-  // Set defaults for datetime fields.
-  //  $types['datetime']['#process'][] = '_set_datetime_defaults';
-}
-
 /**
  * Set defaults for datetime fields.
  */
@@ -66,22 +54,11 @@ function _set_datetime_defaults($element) {
  */
 function report_test_preprocess_page(&$variables) {
 
-
-  if (isset($variables['node'])) {
-    $node = $variables['node'];
-    if ($node->bundle() == 'report_user') {
-      $variables['page']['#attached']['library'][] = 'core/drupal.ajax';
-      $variables['page']['#attached']['library'][] = 'modal/modal';
-      $variables['page']['#attached']['js'][] = drupal_get_path('module', 'report_test') . '/js/ajax.report.js';
-
-
-      kint($variables);
-
-    }
+  $session = \Drupal::service('user.private_tempstore')->get('report_test');
+  if ($session->get('action_popup')) {
+    $variables['#attached']['library'][] = 'report_test/popup-scripts';
+    $session->delete('action_popup');
   }
-  //  $node = $variables['node'];
-
-
 }
 
 /**
@@ -89,13 +66,10 @@ function report_test_preprocess_page(&$variables) {
  */
 function report_test_preprocess_node(&$variables) {
 
-
   $variables['date'] = \Drupal::service('date.formatter')
     ->format($variables['node']->getCreatedTime(), 'report_date');
 
-
 }
-
 
 /**
  * Implements hook_field_widget_form_alter().
@@ -123,8 +97,6 @@ function report_test_field_widget_form_alter(&$element, FormStateInterface $form
       $element['value']['#default_value'] = NULL;
       //      $element['value']['#value'] = DateTime(Date('m/d/Y', time();
       break;
-    case '':
-      break;
   }
 }
 
@@ -137,84 +109,23 @@ function report_test_form_alter(&$form, FormStateInterface $form_state, $form_id
     $form['#attached']['library'][] = 'core/drupal.ajax';
     $form['#attached']['library'][] = 'modal/modal';
 
-
     foreach (array_keys($form['actions']) as $action) {
       if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
-        //
-        //        }
         switch ($action) {
           case 'submit':
-            $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
-
-
             $form['actions']['submit'] += [
               '#value' => t('Save'),
               '#type' => 'submit',
-              '#attributes' => [
-                'class' => [
-                  'btn',
-                  'btn-md',
-                  'btn-primary',
-                  //                  'use-ajax-submit',
-                                                      'use-ajax'
-                ],
-                //                'onclick' => 'return (false);',
-                                "data-accepts"=>"application/vnd.drupal-modal",
-              ],
-              '#ajax' => [
-//                'callback' => \Drupal::service('report_popup_action.default')->reportPopupAjaxCallback(),
-                                'callback' => ['reportPopupAjaxCallback', $this],
-                'event' => 'click',
-                'progress' => [
-                  'type' => 'throbber',
-                  'message' => '',
-                ],
-              ],
             ];
-
-            //            $form_state->setValue('title', $form['title']['']);
-
-            //        $date = \Drupal::service('date.formatter')
-            //          ->format($date, 'custom', '', drupal_get_user_timezone());
             $form_state->setValue('field_date', DrupalDateTime::createFromTimestamp(time()));
-            //            $form_state->setRebuild();
-            //            kint($form_state);
             break;
-          //        $form['submitted']['lebenslauf']['#process'] = array('report_form_ajax_form_submit');
-          //        array_unshift($form['#submit'], '\Drupal\report_test\Controller\ReportTestController::report_form_ajax_form_submit');
         }
 
       }
     }
-
-    //    $form_state_complete_form=$form_state->getCompleteForm();
-    //    if(empty($form_state_complete_version)){
-    //      $form ['source']['migration_ids']['#options'] = $form_state->getDestinationIds("d6");
-    //    }
-    //    else  {
-    //      $form ['source']['migration_ids']['#options'] = $this->getDestinationIds($form_state_complete_version);
-    //    }
   }
 }
 
-function reportPopupAjaxCallback() {
-
-  $title = 'Popup title';
-  //  $description = $form_state->getValue('body');
-  //      kint($date);
-  $response = new AjaxResponse();
-
-  $response->addCommand(new OpenModalDialogCommand($title, 'ASDASDADAD', [
-    'dialogClass' => 'popup-dialog-class',
-    'width' => '400',
-    'height' => '400',
-  ]));
-  //  $response->send();
-  //  exit;
-  return $response;
-
-
-}
 
 
 

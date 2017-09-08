@@ -4,5 +4,5 @@ description: Test Report Module
 core: 8.x
 package: Custom
 libraries:
-  - report_form/global-styling
-  - report_form/ajax-scripts
+  - report_test/global-styling
+  - report_test/popup-scripts

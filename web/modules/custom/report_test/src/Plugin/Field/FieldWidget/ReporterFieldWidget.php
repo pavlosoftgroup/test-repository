@@ -19,6 +19,7 @@ use Drupal\image\Entity\ImageStyle;
  *   }
  * )
  */
+
 class ReporterFieldWidget extends WidgetBase {
 
   /**
@@ -28,7 +29,6 @@ class ReporterFieldWidget extends WidgetBase {
     return [
         'size' => 60,
       ] + parent::defaultSettings();
-    //    return [];
   }
 
   /**

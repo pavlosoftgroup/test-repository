@@ -46,29 +46,13 @@ class ReportTestController extends ControllerBase {
     ];
   }
 
-
   /**
-   * Realisation ajax callback for report creat/edit form.
+   * Create session variable for show popup after action Rules.
    */
-  public static function reportAjaxCallback() {
-
-    $title = 'Popup title';
-    //  $description = $form_state->getValue('body');
-    //      kint($date);
-    $response = new AjaxResponse();
-
-    $response->addCommand(new OpenModalDialogCommand($title, 'wwwwwwwwwwwwwwww', [
-      'dialogClass' => 'popup-dialog-class',
-      'width' => '400',
-      'height' => '400',
-    ]));
-//        $response->send();
-//        exit;
-    return $response;
-
-
+  public static function index(){
+        $session = \Drupal::service('user.private_tempstore')->get('report_test');
+        $session->set('action_popup', TRUE);
   }
-
 
   /**
    * Content.

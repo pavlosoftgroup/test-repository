@@ -12,9 +12,12 @@ global-styling:
     - core/modernizr
     - core/jquery.once
     - core/jquery.ui.datepicker
-ajax-scripts:
+popup-scripts:
   version: 1.x
   js:
     js/ajax.report.js: {}
   dependencies:
     - core/ajax
+    - core/drupal.dialog.ajax
+    - modal/modal
+    - core/drupal.ajax

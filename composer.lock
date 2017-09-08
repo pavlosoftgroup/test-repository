@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2126a1c8fb379ae5756672a8d8cbad1",
+    "content-hash": "03ed86964f2e50cfae914d0add58a5bd",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1091,6 +1091,52 @@
             "time": "2017-05-05T21:26:28+00:00"
         },
         {
+            "name": "drupal/_config",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/_config",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/_config-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "9a7216715057fa96ca5b36d53aa5955ce79aa90c"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1463354339",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "jrockowitz",
+                    "homepage": "https://www.drupal.org/user/371407"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/_config",
+            "support": {
+                "source": "http://cgit.drupalcode.org/_config"
+            }
+        },
+        {
             "name": "drupal/admin_toolbar",
             "version": "1.19.0",
             "source": {
@@ -1254,6 +1300,155 @@
             }
         },
         {
+            "name": "drupal/ajax_links_api",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/ajax_links_api",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ajax_links_api-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "da226843a8eb277ecf19d5e7d8b70005c8dc9881"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1474609139",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "ARUN AK",
+                    "homepage": "https://www.drupal.org/user/1396192"
+                },
+                {
+                    "name": "serjas",
+                    "homepage": "https://www.drupal.org/user/1236842"
+                }
+            ],
+            "description": "Simple API to load content via jQuery Ajax.",
+            "homepage": "https://www.drupal.org/project/ajax_links_api",
+            "support": {
+                "source": "http://cgit.drupalcode.org/ajax_links_api"
+            }
+        },
+        {
+            "name": "drupal/backup_db",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/backup_db",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/backup_db-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "64b4fdba03a9d10eb41ed724fe514b6e6d073776"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "ifsnop/mysqldump-php": "dev-master"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1504076644",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL"
+            ],
+            "authors": [
+                {
+                    "name": "swim",
+                    "homepage": "https://www.drupal.org/user/1968266"
+                }
+            ],
+            "description": "Provides database backup solutions via Drupal.",
+            "homepage": "http://drupal.org/project/backup_db",
+            "support": {
+                "source": "http://cgit.drupalcode.org/backup_db"
+            }
+        },
+        {
+            "name": "drupal/be_sure",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/be_sure",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/be_sure-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "f0219c749b39160d8fdf0b0120d4643f6a83a033"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "require-dev": {
+                "drupal/bs_security": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1477125240",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "kala4ek",
+                    "homepage": "https://www.drupal.org/user/1945174"
+                }
+            ],
+            "description": "Provide interface for other modules to make you sure about your Drupal site.",
+            "homepage": "https://www.drupal.org/project/be_sure",
+            "support": {
+                "source": "http://cgit.drupalcode.org/be_sure"
+            }
+        },
+        {
             "name": "drupal/better_messages",
             "version": "1.0.0-alpha1",
             "source": {
@@ -1365,6 +1560,53 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/blazy",
                 "issues": "https://drupal.org/project/issues/blazy"
+            }
+        },
+        {
+            "name": "drupal/checklistapi",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/checklistapi",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/checklistapi-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "d6b6889548adff2f5598b6f6eef5f9574942b0cd"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1484926084",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "TravisCarden",
+                    "homepage": "https://www.drupal.org/user/236758"
+                }
+            ],
+            "description": "Provides an API for creating fillable, persistent checklists.",
+            "homepage": "https://www.drupal.org/project/checklistapi",
+            "support": {
+                "source": "http://cgit.drupalcode.org/checklistapi"
             }
         },
         {
@@ -1589,6 +1831,265 @@
                 "source": "https://cgit.drupalcode.org/coffee",
                 "issues": "https://drupal.org/project/issues/coffee",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/composer_manager",
+            "version": "1.0.0-rc2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/composer_manager",
+                "reference": "8.x-1.0-rc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/composer_manager-8.x-1.0-rc2.zip",
+                "reference": "8.x-1.0-rc2",
+                "shasum": "ebefa69933a4751bec93ed89a7fc4624c1dc9a1b"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-rc2",
+                    "datestamp": "1464714999",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "See contributors",
+                    "homepage": "http://drupal.org/node/1929436/committers",
+                    "role": "Developer"
+                },
+                {
+                    "name": "cpliakas",
+                    "homepage": "https://www.drupal.org/user/266779"
+                },
+                {
+                    "name": "deviantintegral",
+                    "homepage": "https://www.drupal.org/user/71291"
+                },
+                {
+                    "name": "nhoag",
+                    "homepage": "https://www.drupal.org/user/2423844"
+                },
+                {
+                    "name": "pcambra",
+                    "homepage": "https://www.drupal.org/user/122101"
+                },
+                {
+                    "name": "psynaptic",
+                    "homepage": "https://www.drupal.org/user/93429"
+                }
+            ],
+            "description": "Composer Manager is a bridge to best-in-breed, standards compliant PHP libraries that are managed by Composer and Packagist.",
+            "homepage": "http://drupal.org/project/composer_manager",
+            "support": {
+                "source": "http://cgit.drupalcode.org/composer_manager",
+                "issues": "http://drupal.org/project/issues/composer_manager"
+            }
+        },
+        {
+            "name": "drupal/confi",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/confi",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/confi-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "b4911ecae04d01f0c835e605af0c01736b5d889b"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "require-dev": {
+                "drupal/features": "^3"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1494826086",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "AndreyMaximov",
+                    "homepage": "https://www.drupal.org/user/1024156"
+                },
+                {
+                    "name": "BR0kEN",
+                    "homepage": "https://www.drupal.org/user/2802285"
+                },
+                {
+                    "name": "danylevskyi",
+                    "homepage": "https://www.drupal.org/user/322039"
+                },
+                {
+                    "name": "ddrozdik",
+                    "homepage": "https://www.drupal.org/user/574124"
+                },
+                {
+                    "name": "podarok",
+                    "homepage": "https://www.drupal.org/user/116002"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/confi",
+            "support": {
+                "source": "http://cgit.drupalcode.org/confi"
+            }
+        },
+        {
+            "name": "drupal/config_actions",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/config_actions",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_actions-8.x-1.0-beta1.zip",
+                "reference": "8.x-1.0-beta1",
+                "shasum": "00e0dd546168c345f07aba4cae047dd7447c3526"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1491486183",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "e2thex",
+                    "homepage": "https://www.drupal.org/user/189123"
+                },
+                {
+                    "name": "febbraro",
+                    "homepage": "https://www.drupal.org/user/43670"
+                },
+                {
+                    "name": "mpotter",
+                    "homepage": "https://www.drupal.org/user/616192"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/config_actions",
+            "support": {
+                "source": "http://cgit.drupalcode.org/config_actions"
+            }
+        },
+        {
+            "name": "drupal/config_devel",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/config_devel",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_devel-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "148d408827c570e725b08d7e4c1c46d321dc1efa"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1487232784",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "alexpott",
+                    "homepage": "https://www.drupal.org/user/157725"
+                },
+                {
+                    "name": "benjy",
+                    "homepage": "https://www.drupal.org/user/1852732"
+                },
+                {
+                    "name": "chx",
+                    "homepage": "https://www.drupal.org/user/9446"
+                },
+                {
+                    "name": "joachim",
+                    "homepage": "https://www.drupal.org/user/107701"
+                },
+                {
+                    "name": "nedjo",
+                    "homepage": "https://www.drupal.org/user/4481"
+                },
+                {
+                    "name": "tim.plunkett",
+                    "homepage": "https://www.drupal.org/user/241634"
+                },
+                {
+                    "name": "vijaycs85",
+                    "homepage": "https://www.drupal.org/user/93488"
+                }
+            ],
+            "description": "Helps developers work with configuration.",
+            "homepage": "https://www.drupal.org/project/config_devel",
+            "support": {
+                "source": "http://cgit.drupalcode.org/config_devel"
             }
         },
         {
@@ -2270,6 +2771,77 @@
             }
         },
         {
+            "name": "drupal/db_maintenance",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/db_maintenance",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/db_maintenance-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "800b4a501f1a9ab5a6a22d51d8f66a338d1ed6f0"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1450239539",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Nafes",
+                    "homepage": "https://www.drupal.org/user/2489926"
+                },
+                {
+                    "name": "VicOnt",
+                    "homepage": "https://www.drupal.org/user/1801242"
+                },
+                {
+                    "name": "bonobo",
+                    "homepage": "https://www.drupal.org/user/19631"
+                },
+                {
+                    "name": "cYu",
+                    "homepage": "https://www.drupal.org/user/202205"
+                },
+                {
+                    "name": "deekayen",
+                    "homepage": "https://www.drupal.org/user/972"
+                },
+                {
+                    "name": "jgraham",
+                    "homepage": "https://www.drupal.org/user/146055"
+                },
+                {
+                    "name": "marcp",
+                    "homepage": "https://www.drupal.org/user/20885"
+                }
+            ],
+            "description": "DB Maintenance module.",
+            "homepage": "https://www.drupal.org/project/db_maintenance",
+            "support": {
+                "source": "http://cgit.drupalcode.org/db_maintenance"
+            }
+        },
+        {
             "name": "drupal/devel",
             "version": "1.0.0",
             "source": {
@@ -2349,6 +2921,54 @@
                 "source": "http://cgit.drupalcode.org/devel",
                 "issues": "http://drupal.org/project/devel",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/devel_debug_log",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/devel_debug_log",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/devel_debug_log-8.x-1.0-beta1.zip",
+                "reference": "8.x-1.0-beta1",
+                "shasum": "673585c5eefb2831d474da5a0ffc3b210bdb2701"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/kint": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1465064639",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Gergely Lekli",
+                    "homepage": "https://www.drupal.org/user/930940"
+                }
+            ],
+            "description": "Stores debug information for an easier AJAX debugging.",
+            "homepage": "https://www.drupal.org/project/devel_debug_log",
+            "support": {
+                "source": "http://cgit.drupalcode.org/devel_debug_log"
             }
         },
         {
@@ -3062,6 +3682,69 @@
             }
         },
         {
+            "name": "drupal/generator_ui",
+            "version": "1.0.0-alpha5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/generator_ui",
+                "reference": "8.x-1.0-alpha5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/generator_ui-8.x-1.0-alpha5.zip",
+                "reference": "8.x-1.0-alpha5",
+                "shasum": "53d449f55ffb01abc8df009194d2a092cf8d0728"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha5",
+                    "datestamp": "1461688739",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Emerya.thomas",
+                    "homepage": "https://www.drupal.org/user/1213824"
+                },
+                {
+                    "name": "MichaelB",
+                    "homepage": "https://www.drupal.org/user/2309046"
+                },
+                {
+                    "name": "aymen-sf8",
+                    "homepage": "https://www.drupal.org/user/3390804"
+                },
+                {
+                    "name": "eme",
+                    "homepage": "https://www.drupal.org/user/542492"
+                },
+                {
+                    "name": "matio89",
+                    "homepage": "https://www.drupal.org/user/2320090"
+                }
+            ],
+            "description": "This module allow to generate modules through the Drupal user interface.",
+            "homepage": "https://www.drupal.org/project/generator_ui",
+            "support": {
+                "source": "http://cgit.drupalcode.org/generator_ui"
+            }
+        },
+        {
             "name": "drupal/image_widget_crop",
             "version": "2.0.0",
             "source": {
@@ -3250,6 +3933,67 @@
             "homepage": "https://www.drupal.org/project/inline_entity_form",
             "support": {
                 "source": "http://cgit.drupalcode.org/inline_entity_form"
+            }
+        },
+        {
+            "name": "drupal/kint",
+            "version": "1.0.0",
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/devel": "self.version"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1502736865",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "catch",
+                    "homepage": "https://www.drupal.org/user/35733"
+                },
+                {
+                    "name": "juampynr",
+                    "homepage": "https://www.drupal.org/user/682736"
+                },
+                {
+                    "name": "lussoluca",
+                    "homepage": "https://www.drupal.org/user/138068"
+                },
+                {
+                    "name": "moshe weitzman",
+                    "homepage": "https://www.drupal.org/user/23"
+                },
+                {
+                    "name": "pcambra",
+                    "homepage": "https://www.drupal.org/user/122101"
+                },
+                {
+                    "name": "salvis",
+                    "homepage": "https://www.drupal.org/user/82964"
+                },
+                {
+                    "name": "willzyx",
+                    "homepage": "https://www.drupal.org/user/1043862"
+                }
+            ],
+            "description": "Wrapper for Kint debugging tool",
+            "homepage": "https://www.drupal.org/project/devel",
+            "support": {
+                "source": "http://cgit.drupalcode.org/devel"
             }
         },
         {
@@ -3932,6 +4676,247 @@
             }
         },
         {
+            "name": "drupal/oop_examples",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/oop_examples",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/oop_examples-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "6ec2dbad898e1c1f58c182c6c37c717da4188f71"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1445131440",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Nafes",
+                    "homepage": "https://www.drupal.org/user/2489926"
+                },
+                {
+                    "name": "VicOnt",
+                    "homepage": "https://www.drupal.org/user/1801242"
+                }
+            ],
+            "description": "A variety of OOP example code.",
+            "homepage": "https://www.drupal.org/project/oop_examples",
+            "support": {
+                "source": "http://cgit.drupalcode.org/oop_examples"
+            }
+        },
+        {
+            "name": "drupal/plugin",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/plugin",
+                "reference": "8.x-2.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/plugin-8.x-2.5.zip",
+                "reference": "8.x-2.5",
+                "shasum": "fddee701ddbc3b7c87ff46a6a77fdb0230a122b8"
+            },
+            "require": {
+                "drupal/core": "~8.0 || >= 8.0.5",
+                "php": "~5.5|~7.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.5",
+                    "datestamp": "1491597183",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\plugin\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Drupal\\Tests\\plugin\\": "tests/src"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Xano",
+                    "homepage": "https://www.drupal.org/user/62965"
+                }
+            ],
+            "description": "Provides tools that extend Drupal's plugin system.",
+            "homepage": "https://www.drupal.org/project/plugin",
+            "support": {
+                "source": "http://cgit.drupalcode.org/plugin"
+            }
+        },
+        {
+            "name": "drupal/popup_message",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/popup_message",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/popup_message-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "4f0e123887c0206ece1e34010c38eb2a1f48cdc2"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1499696042",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Adrian Liegmann",
+                    "homepage": "https://www.drupal.org/user/2750277"
+                },
+                {
+                    "name": "Maciej Lukianski",
+                    "homepage": "https://www.drupal.org/user/400060"
+                },
+                {
+                    "name": "Pawelgorski87",
+                    "homepage": "https://www.drupal.org/user/3139083"
+                },
+                {
+                    "name": "akkonrad",
+                    "homepage": "https://www.drupal.org/user/2750265"
+                },
+                {
+                    "name": "gpietrzak",
+                    "homepage": "https://www.drupal.org/user/427946"
+                },
+                {
+                    "name": "grzegorz.bartman",
+                    "homepage": "https://www.drupal.org/user/363120"
+                },
+                {
+                    "name": "jaro.2801",
+                    "homepage": "https://www.drupal.org/user/1572856"
+                },
+                {
+                    "name": "sygnetica",
+                    "homepage": "https://www.drupal.org/user/1726244"
+                },
+                {
+                    "name": "vindi",
+                    "homepage": "https://www.drupal.org/user/2668815"
+                }
+            ],
+            "description": "Popup message for users",
+            "homepage": "https://www.drupal.org/project/popup_message",
+            "support": {
+                "source": "http://cgit.drupalcode.org/popup_message"
+            }
+        },
+        {
+            "name": "drupal/pusher_integration",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/pusher_integration",
+                "reference": "8.x-1.01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/pusher_integration-8.x-1.01.zip",
+                "reference": "8.x-1.01",
+                "shasum": "679f856fa5ae25a0efbc2a3ad94b7328aa6cd084"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/entity": "*",
+                "pusher/pusher-php-server": "^2.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.01",
+                    "datestamp": "1472186039",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "incursus",
+                    "homepage": "https://www.drupal.org/user/3464511"
+                }
+            ],
+            "description": "Pusher.com API Support Module",
+            "homepage": "https://www.drupal.org/project/pusher_integration",
+            "support": {
+                "source": "http://cgit.drupalcode.org/pusher_integration"
+            }
+        },
+        {
             "name": "drupal/rules",
             "version": "3.0.0-alpha3",
             "source": {
@@ -3981,6 +4966,57 @@
             "homepage": "https://www.drupal.org/project/rules",
             "support": {
                 "source": "http://cgit.drupalcode.org/rules"
+            }
+        },
+        {
+            "name": "drupal/sitecommander",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/sitecommander",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/sitecommander-8.x-1.0-beta1.zip",
+                "reference": "8.x-1.0-beta1",
+                "shasum": "31b15a78b4c1319fcf7ca89ca80cf678849996e8"
+            },
+            "require": {
+                "drupal/composer_manager": "*",
+                "drupal/core": "~8.0",
+                "drupal/entity": "*",
+                "drupal/pusher_integration": "*",
+                "pusher/pusher-php-server": "^2.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1472153339",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "incursus",
+                    "homepage": "https://www.drupal.org/user/3464511"
+                }
+            ],
+            "description": "Interactive dashboard for managing your Drupal site.",
+            "homepage": "https://www.drupal.org/project/sitecommander",
+            "support": {
+                "source": "http://cgit.drupalcode.org/sitecommander"
             }
         },
         {
@@ -4250,6 +5286,69 @@
             "homepage": "https://www.drupal.org/project/typed_data",
             "support": {
                 "source": "http://cgit.drupalcode.org/typed_data"
+            }
+        },
+        {
+            "name": "drupal/ultimate_cron",
+            "version": "2.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/ultimate_cron",
+                "reference": "8.x-2.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ultimate_cron-8.x-2.0-alpha2.zip",
+                "reference": "8.x-2.0-alpha2",
+                "shasum": "adfebde3e4c13b99c6edbf0f4b994b9e91ce7ef7"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-alpha2",
+                    "datestamp": "1503075545",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Dane Powell",
+                    "homepage": "https://www.drupal.org/user/339326"
+                },
+                {
+                    "name": "arnested",
+                    "homepage": "https://www.drupal.org/user/245635"
+                },
+                {
+                    "name": "gielfeldt",
+                    "homepage": "https://www.drupal.org/user/366993"
+                },
+                {
+                    "name": "miro_dietiker",
+                    "homepage": "https://www.drupal.org/user/227761"
+                }
+            ],
+            "description": "Cron",
+            "homepage": "https://www.drupal.org/project/ultimate_cron",
+            "support": {
+                "source": "http://cgit.drupalcode.org/ultimate_cron"
             }
         },
         {
@@ -4899,6 +5998,58 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "ifsnop/mysqldump-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ifsnop/mysqldump-php.git",
+                "reference": "eb2a10ab4f3dd30ef953f386c2da9e091a44b0d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ifsnop/mysqldump-php/zipball/eb2a10ab4f3dd30ef953f386c2da9e091a44b0d2",
+                "reference": "eb2a10ab4f3dd30ef953f386c2da9e091a44b0d2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ifsnop\\": "src/Ifsnop/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Diego Torres",
+                    "homepage": "https://github.com/ifsnop",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This is a php version of linux's mysqldump in terminal \"$ mysqldump -u username -p...\"",
+            "homepage": "https://github.com/ifsnop/mysqldump-php",
+            "keywords": [
+                "backup",
+                "database",
+                "dump",
+                "export",
+                "mysql",
+                "mysqldump",
+                "pdo",
+                "sqlite"
+            ],
+            "time": "2017-08-25T17:21:15+00:00"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -5562,6 +6713,50 @@
                 "shell"
             ],
             "time": "2017-07-29T19:30:02+00:00"
+        },
+        {
+            "name": "pusher/pusher-php-server",
+            "version": "2.6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pusher/pusher-http-php.git",
+                "reference": "2cf2ba85e7ce3250468a1c42ab7c948a7d43839d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/2cf2ba85e7ce3250468a1c42ab7c948a7d43839d",
+                "reference": "2cf2ba85e7ce3250468a1c42ab7c948a7d43839d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Library for interacting with the Pusher REST API",
+            "homepage": "https://github.com/pusher/pusher-php-server",
+            "keywords": [
+                "events",
+                "php-pusher-server",
+                "publish",
+                "pusher",
+                "realtime",
+                "rest",
+                "trigger"
+            ],
+            "time": "2017-06-06T16:41:17+00:00"
         },
         {
             "name": "stack/builder",
@@ -9075,12 +10270,18 @@
         "drupal/better_messages": 15,
         "drupal/ckeditor_entity_link": 15,
         "drupal/coffee": 10,
+        "drupal/config_actions": 10,
+        "drupal/devel_debug_log": 10,
         "drupal/entity_embed": 10,
         "drupal/file_entity": 10,
+        "drupal/generator_ui": 15,
         "drupal/inline_entity_form": 10,
         "drupal/media": 20,
         "drupal/media_entity_video": 10,
-        "drupal/rules": 15
+        "drupal/popup_message": 10,
+        "drupal/rules": 15,
+        "drupal/sitecommander": 10,
+        "drupal/ultimate_cron": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -5,6 +5,7 @@ namespace Drupal\report_test\Plugin\RulesAction;
 use Drupal\rules\Core\RulesActionBase;
 use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Ajax\AjaxResponse;
 
 /**
  * Provides a 'Report Popup' action.
@@ -22,16 +23,29 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
  */
 class ReportPopupAction extends RulesActionBase {
 
-  protected function doExecute($value) {
+  protected function doExecute($node ) {
 
+//    $response = new AjaxResponse();
 
-    $title = 'Popup Title';
-    $title = $value;
-    kint($title);
     drupal_set_message(t('You have been redirected because...'), 'status', TRUE);
-    $response = new RedirectResponse('/report_test/modal');
-    $response->send();
+
+    kint($node);
+    $response = \Drupal\report_test\Controller\ReportTestController::reportAjaxCallback();
+    kint($response);
+//    $response->send();
+
+
+
+
+    exit;
+
+//    $title = 'Popup Title';
+//    $title = $value;
+//    kint($title);
+//    $response = new RedirectResponse('/report_test/modal/nojs');
+//    $response->send();
 //    exit;
+//    return $response;
   }
 
 }

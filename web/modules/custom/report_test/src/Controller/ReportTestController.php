@@ -12,7 +12,6 @@ use Drupal\Core\Ajax\OpenModalDialogCommand;
 use Drupal\Core\Form\FormStateInterface;
 
 
-
 /**
  * Class ReporttTestController.
  */
@@ -51,19 +50,20 @@ class ReportTestController extends ControllerBase {
   /**
    * Realisation ajax callback for report creat/edit form.
    */
-  function reportAjaxCallback(array $form, FormStateInterface $form_state) {
+  public static function reportAjaxCallback() {
 
-    $date = $form_state->getValue('field_date');
     $title = 'Popup title';
     //  $description = $form_state->getValue('body');
     //      kint($date);
     $response = new AjaxResponse();
 
-    $response->addCommand(new OpenModalDialogCommand($title, 'ASDASDADAD', [
+    $response->addCommand(new OpenModalDialogCommand($title, 'wwwwwwwwwwwwwwww', [
       'dialogClass' => 'popup-dialog-class',
       'width' => '400',
       'height' => '400',
     ]));
+//        $response->send();
+//        exit;
     return $response;
 
 

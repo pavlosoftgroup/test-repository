@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies: {  }
+name: movie
+label: Movie
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  9ede2d55-c09b-4425-aebc-857bf11cc612:
+    settings:
+      upload_location: 'public://'
+      multiple: true
+      submit_text: 'Select files'
+      extensions: mp4
+    uuid: 9ede2d55-c09b-4425-aebc-857bf11cc612
+    weight: 2
+    label: upload
+    id: upload

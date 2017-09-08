@@ -1,0 +1,47 @@
+entity_types:
+  file: file
+  media: media
+  node: node
+  taxonomy_term: taxonomy_term
+  user: user
+  block_content: 0
+  comment: 0
+  contact_message: 0
+  crop: 0
+  shortcut: 0
+  menu_link_content: 0
+node_bundles:
+  report_user: report_user
+  article: 0
+  entity_browser_test: 0
+  page: 0
+0_bundles: null
+file_bundles:
+  video: video
+  audio: 0
+  document: 0
+  image: 0
+comment_bundles:
+  comment: 0
+contact_message_bundles:
+  feedback: 0
+  personal: 0
+block_content_bundles:
+  basic: 0
+menu_link_content_bundles:
+  menu_link_content: 0
+shortcut_bundles:
+  default: 0
+taxonomy_term_bundles:
+  tags: 0
+user_bundles:
+  user: user
+media_bundles:
+  video: video
+  gallery: 0
+  document: 0
+  image: 0
+  instagram: 0
+  movie: 0
+  tweet: 0
+langcode: ru

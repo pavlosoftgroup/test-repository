@@ -1,0 +1,44 @@
+langcode: ru
+status: true
+dependencies: {  }
+id: report_create
+label: 'Report Create'
+events:
+  -
+    event_name: 'rules_entity_presave:node'
+description: ''
+tags:
+  - ''
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: bbf26921-2c28-456a-8cd7-98d708969de7
+  conditions:
+    id: rules_and
+    uuid: adb6a600-acae-4d84-a043-64d8f564427f
+    conditions:
+      -
+        id: rules_condition
+        uuid: 224c7249-9010-485e-9c2b-88c90580a506
+        context_values:
+          node: 'node.type.entity:type.report_user'
+        context_mapping: {  }
+        context_processors:
+          node:
+            rules_tokens: {  }
+        provides_mapping: {  }
+        condition_id: 'entity_bundle:node'
+        negate: false
+  actions:
+    id: rules_action_set
+    uuid: 014568a6-86b7-4d49-a614-cf112e23a65e
+    actions:
+      -
+        id: rules_action
+        uuid: 86595414-f589-4800-bbb3-c3b44fdcf0b0
+        context_values: {  }
+        context_mapping:
+          Message: node
+        context_processors: {  }
+        provides_mapping: {  }
+        action_id: rules_report_popup

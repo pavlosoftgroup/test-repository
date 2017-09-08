@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies: {  }
+id: create_report
+label: 'Create Report'
+description: ''
+tags:
+  - ''
+config_version: '3'
+component:
+  expression:
+    id: rules_rule
+    uuid: 2d1fbb06-6c5e-4359-9a98-16c35a3a7927
+    conditions:
+      id: rules_and
+      uuid: 23c459ea-c98c-48d2-bb99-f8fb1168aa72
+      conditions:
+        -
+          id: rules_condition
+          uuid: 1b6c59bc-9c53-48fe-988c-b9ff267f4d6e
+          context_values:
+            types:
+              - report_user
+          context_mapping:
+            node: '@node.node_route_context:node'
+          context_processors:
+            types:
+              rules_tokens: {  }
+          provides_mapping: {  }
+          condition_id: rules_node_is_of_type
+          negate: false
+    actions:
+      id: rules_action_set
+      uuid: 0a7d19a6-897b-462e-a6f0-2e4d90d284f1
+      actions:
+        -
+          id: rules_action
+          uuid: b5d54527-f640-40d8-9dea-a5023e19a74f
+          context_values:
+            Message: 'Text popup after repotr'
+          context_mapping: {  }
+          context_processors:
+            Message:
+              rules_tokens: {  }
+          provides_mapping: {  }
+          action_id: rules_report_popup
+  context_definitions: {  }
+  provided_context_definitions: {  }

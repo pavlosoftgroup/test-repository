@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   module:
-    - user
-id: user.token
+    - file
+id: file.token
 label: Token
-targetEntityType: user
+targetEntityType: file
 cache: true

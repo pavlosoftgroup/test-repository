@@ -9,3 +9,4 @@ dependencies:
   - language
   - user
 version: 8.x-1.0
+package: 'Report '

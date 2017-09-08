@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - file_entity.type.video
+  content:
+    - 'file:image:9baf144a-d892-4684-bdb5-213e267e3d49'
+  module:
+    - entity_embed
+    - file
+    - file_entity
+    - media_entity_video
+label: Movie
+id: movie
+type_id: entity
+type_settings:
+  entity_type: file
+  bundles:
+    - video
+  display_plugins:
+    - 'file:file_video'
+    - 'file:video_player_html5'
+  entity_browser: movie
+  entity_browser_settings:
+    display_review: true
+icon_uuid: 9baf144a-d892-4684-bdb5-213e267e3d49

@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   module:
-    - user
-id: user.token
+    - taxonomy
+id: taxonomy_term.token
 label: Token
-targetEntityType: user
+targetEntityType: taxonomy_term
 cache: true

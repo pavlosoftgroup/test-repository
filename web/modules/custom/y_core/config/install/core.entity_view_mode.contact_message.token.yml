@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   module:
-    - user
-id: user.token
+    - contact
+id: contact_message.token
 label: Token
-targetEntityType: user
+targetEntityType: contact_message
 cache: true
